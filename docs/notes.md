@@ -1,0 +1,50 @@
+# 開発前の準備
+
+```bash
+# Next.jsアプリ作成
+$ docker compose run --rm app sh -c 'npx create-next-app . --typescript'
+
+# package-lock.jsonからインストール
+$ docker compose run --rm app sh -c 'npm ci'
+
+# npm run buildを通す
+$ docker compose exec app npm run build
+
+# コンテナ起動
+$ docker compose up
+
+# 所有者と所有グループの変更
+$ sudo chown -R $USER:$USER src/
+
+# Dockerコンテナを再作成し、デタッチモードでバックグラウンド起動
+$ docker compose up --build -d
+
+# サービス'app'の稼働中のコンテナ内でbashシェルを実行
+$ docker compose exec app bash
+
+# すべての未使用または使用中のDockerイメージを削除
+$ docker rmi $(docker images -q)
+
+```
+
+# Git
+
+```bash
+# タグの作成
+$ git tag v1.0.0
+
+# タグの一覧表示
+$ git tag
+
+# ブランチの切り替え
+$ git switch develop
+
+# 既存のブランチを一時的に切り替える（チェックアウト）
+$ git checkout <タグ名>
+
+# 過去のタグから新しいブランチを作成する
+$ git checkout -b <新しいブランチ名> <タグ名>
+
+# ローカルブランチを安全に削除する
+$ git branch -d <branch-name>
+```
