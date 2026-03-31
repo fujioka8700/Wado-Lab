@@ -11,7 +11,10 @@ $ docker compose run --rm app sh -c 'npm ci'
 $ docker compose exec app npm run build
 
 # コンテナ起動
-$ docker compose up
+$ docker compose up -d
+
+# コンテナ停止
+$ docker compose down
 
 # 所有者と所有グループの変更
 $ sudo chown -R $USER:$USER src/

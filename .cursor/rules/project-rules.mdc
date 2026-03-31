@@ -1,3 +1,10 @@
 ---
 alwaysApply: true
 ---
+
+# Agent Execution Prerequisite
+
+- エージェントを実行する前に、必ず `docs/requirements.md` と `docs/tech-stack.md` を確認すること。
+- 実装・調査・提案のいずれの場合でも、上記2ファイルの内容を前提として判断すること。
+- エージェントを実行する際、`docs/special-thanks.md` と `docs/todo.md` は読み込まないこと。
+- エージェントを実行する際、`docs/special-thanks.md` と `docs/todo.md` には書き込まないこと。
